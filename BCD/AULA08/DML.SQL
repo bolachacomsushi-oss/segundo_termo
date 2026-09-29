@@ -170,3 +170,10 @@ UPDATE cliente
 SET TELEFONE = NULL
 WHERE ID_CLIENTE = 5;
 -- TUDO ATUALIZAÇÕES OU MODIFICAÇÃO DE DADOS
+
+
+
+
+--==========================================================================
+-- PARTE A  : INSERT
+
