@@ -1,0 +1,17 @@
+[
+  {
+    "nome": "patixa",
+    "quantidade": 23,
+    "custoUnitario": 90
+  },
+  {
+    "nome": "carlinhos",
+    "quantidade": 1,
+    "custoUnitario": 0
+  },
+  {
+    "nome": "rico",
+    "quantidade": 5,
+    "custoUnitario": 78
+  }
+]
