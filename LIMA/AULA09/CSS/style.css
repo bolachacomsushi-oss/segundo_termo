@@ -1,0 +1,37 @@
+nav {
+    display: flex;
+    gap: 23px;
+    list-style: circle;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+li {
+    type: none;
+}
+
+ a {
+    font-style: none;
+    color: white;
+ }
+
+ .banner, .banner-conteudo, .banner-imagem, .sessao-cabecalho, .cafes {
+    background-color: #E27396;
+ }
+
+ header, footer {
+    background-color: #5A321B;
+ }
+
+ .sobre, .contato, .contato-cabecalho {
+    background-color: #FFFCF5;
+ }
+
+ .lista-cafes > li {
+    background-color: #F3E6D7;
+ }
+
+ .ambiente, .ambiente-conteudo {
+    background-color: #2B170D;
+ }
