@@ -1,0 +1,42 @@
+.ex1-grid {
+    display: grid;
+
+    /* [EXERCICIO 1] */
+    /* grid-template-columns: repeat(3, 1fr); */ 
+
+    /* [EXERCICIO 2] */
+    /* grid-template-columns: repeat(2, 1fr); */
+
+    /* [EXERCICIO 3] */
+    /* grid-template-columns: 2fr 1fr; */
+    /* (Com o "2fr 1fr" o espaçamento entre as colunas fica maior pois determina a distância entre as frações, e como tem o 2fr primeiro, coloca um espaçamento maior e não com um padrão) */
+
+    /* [EXERCICIO 4] */
+    /* grid-template-columns: repeat(4, 1fr); */
+    
+    /* [EXERCICIO 5]   */
+    
+@media (max-width: 468px) {
+    .ex1-grid{
+        grid-template-columns: 1fr;
+    }
+    .ex1-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablets */
+@media (max-width: 600px) {
+    .ex1-grid{
+        grid-column: repeat(2, 1fr);
+    }
+}
+
+/* Celular */
+@media (max-width: 300px) {
+    .ex1-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+}
