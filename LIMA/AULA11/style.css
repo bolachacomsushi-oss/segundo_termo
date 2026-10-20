@@ -1,0 +1,4 @@
+.grid-ca {
+    display: grid;
+    grid-template-columns: lfr lfr lfr;
+}

@@ -1,1 +1,0 @@
-console.log("acaba pelo amor de deus")
