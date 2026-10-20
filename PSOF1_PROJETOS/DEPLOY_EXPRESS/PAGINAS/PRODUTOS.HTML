@@ -1,26 +1,111 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/logotipo.ico" type="image/x-icon">
-
-    <title>Detalhes do alimento</title>
+    <title>Detalhes do produto</title>
 </head>
 <body>
-
-<div class="city">
-
-    <h1></h1>
-    <p></p>
-
-    
-    <div>
-        <h2></h2>
-        <p></p>
+ 
+<!-- CABEÇALHO: colar aqui o cabeçalho feito pela equipe -->
+<!-- Se o cabeçalho da sua amiga estiver pronto, apague esta linha e cole o <header> dela aqui -->
+ 
+<main>
+  <section class="palco" aria-labelledby="nome-produto">
+    <div class="produto">
+      <div class="foto" role="img" aria-label="Foto do Jukebo">🍔</div>
+ 
+      <form id="pedido">
+        <h1 id="nome-produto">Jukebox</h1>
+        <p class="descricao">Hambúrguer grelhado, queijo derretido e o molho secreto da casa, no pão com gergelim.</p>
+ 
+        <h2>Ingredientes</h2>
+        <ul class="ingredientes">
+          <li>Pão com gergelim</li>
+          <li>Hambúrguer bovino</li>
+          <li>Queijo cheddar</li>
+          <li>Picles</li>
+          <li>Alface</li>
+          <li>Cebola</li>
+          <li>Molho Turbo</li>
+        </ul>
+        <p class="dica">Contém glúten, leite, gergelim e ovo.</p>
+ 
+        <!-- TAMANHO: data-preco é o valor base de cada tamanho -->
+        <fieldset>
+          <legend>Tamanho</legend>
+          <div class="tamanhos">
+            <label><input type="radio" name="tamanho" value="Simples" data-preco="24.90" checked>
+              <span>Simples<small>R$ 24,90</small></span></label>
+            <label><input type="radio" name="tamanho" value="Duplo" data-preco="29.90">
+              <span>Duplo<small>R$ 29,90</small></span></label>
+            <label><input type="radio" name="tamanho" value="Triplo" data-preco="36.90">
+              <span>Triplo<small>R$ 36,90</small></span></label>
+          </div>
+        </fieldset>
+ 
+        <!-- OPÇÕES: adicionais pagos (data-preco) e retiradas grátis -->
+        <fieldset>
+          <legend>Adicionais</legend>
+          <label class="opcao"><input type="checkbox" name="extra" value="Bacon" data-preco="4.50">
+            <span class="nome">Bacon crocante</span><span class="valor">+ R$ 4,50</span></label>
+          <label class="opcao"><input type="checkbox" name="extra" value="Queijo extra" data-preco="3.00">
+            <span class="nome">Queijo extra</span><span class="valor">+ R$ 3,00</span></label>
+          <label class="opcao"><input type="checkbox" name="extra" value="Ovo" data-preco="2.50">
+            <span class="nome">Ovo</span><span class="valor">+ R$ 2,50</span></label>
+          <label class="opcao"><input type="checkbox" name="extra" value="Combo (batata e refri)" data-preco="14.00">
+            <span class="nome">Virar combo (batata e refrigerante)</span><span class="valor">+ R$ 14,00</span></label>
+        </fieldset>
+ 
+        <fieldset>
+          <legend>Retirar</legend>
+          <label class="opcao"><input type="checkbox" name="retirar" value="Sem picles">
+            <span class="nome">Sem picles</span><span class="valor">grátis</span></label>
+          <label class="opcao"><input type="checkbox" name="retirar" value="Sem cebola">
+            <span class="nome">Sem cebola</span><span class="valor">grátis</span></label>
+          <label class="opcao"><input type="checkbox" name="retirar" value="Sem molho">
+            <span class="nome">Sem molho</span><span class="valor">grátis</span></label>
+        </fieldset>
+ 
+        <div class="compra">
+          <div class="preco" aria-live="polite"><small>Total</small><span id="total">R$ 24,90</span></div>
+          <button class="botao" type="submit">Adicionar ao pedido</button>
+        </div>
+        <p class="aviso" id="aviso" role="status"></p>
+      </form>
     </div>
-
+    <div class="chao" aria-hidden="true"></div>
+  </section>
+</main>
+ 
+<!-- RODAPÉ: colar aqui o rodapé feito pela equipe -->
+ 
+<script>
+  const form = document.getElementById('pedido');
+  const total = document.getElementById('total');
+  const aviso = document.getElementById('aviso');
+  const moeda = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+ 
+  function calcular() {
+    let soma = 0;
+    form.querySelectorAll('input[data-preco]:checked').forEach(i => soma += parseFloat(i.dataset.preco));
+    total.textContent = moeda(soma);
+    aviso.textContent = '';
+    return soma;
+  }
+ 
+  form.addEventListener('change', calcular);
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const escolhas = [...form.querySelectorAll('input:checked')].map(i => i.value);
+    aviso.textContent = 'Adicionado: ' + escolhas.join(', ') + ' (' + moeda(calcular()) + ')';
+    // Aqui a equipe pode ligar o pedido ao carrinho do site.
+  });
+  calcular();
+</script>
 </body>
 </html>
