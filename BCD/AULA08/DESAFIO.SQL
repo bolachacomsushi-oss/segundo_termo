@@ -78,16 +78,31 @@ WHERE id_pedido = 4
 
 -- 11. Atualize valor_total do pedido de acordo com os itens cadastrados.
 --     Você pode calcular previamente com SELECT SUM(quantidade * preco_unitario).
+-- SELECT SUM(quantidade * preco_unitario)
+UPDATE item_pedido
+SET valor_total = quantidade * preco_unitario
+WHERE id_cliente = 1
 
 
 
 -- 12. Escolha um dos produtos criados e faça uma exclusão lógica (ativo = FALSE).
-
+UPDATE produto
+SET ativo = FALSE
+WHERE id_produto = 22
 
 -- PARTE C - DELETE
 
 -- 13. Crie um cliente de teste sem pedidos.
 --     Depois localize e exclua apenas esse cliente.
+INSERT INTO cliente (nome,email,telefone,cidade,ativo) VALUES
+('Bruna Prado','brunapradonails@email.com','1999123-4567','Limeira',TRUE);
+SET @cliente = LAST_INSERT_ID()
+
+SELECT*FROM cliente
+
+DELETE FROM cliente
+WHERE id_cliente = 14
+
 
 
 -- 14. Tente excluir um cliente da base original que possua pedidos.
@@ -95,11 +110,14 @@ WHERE id_pedido = 4
 -- Resultado observado:
 
 
+
+
 -- 15. Explique em comentário por que a FK bloqueou a exclusão.
 -- Resposta:
 
 
 -- 16. Crie uma categoria temporária chamada 'Excluir Depois' e remova-a.
+INSERT INTO categoria (NOME) VALUES
 
 
 -- PARTE D - INTEGRIDADE E VALIDAÇÃO

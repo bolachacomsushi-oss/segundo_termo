@@ -201,12 +201,3 @@ WHERE id_cliente = 3
 COMMIT
 
 ROLLBACK
-
--- =========================================================================================
--- CHECKLIST --
--- Consigo inserir uma ou várias linhas.
--- Entendo AUTO_INCREMENT, DEFAULT e NULL. (só não entendo direito a função do AUTO_INCREMENT)
--- Consigo atualizar uma ou várias linhas com segurança.
--- Nunca executo UPDATE ou DELETE sem conferir o WHERE.
--- Consigo manipular registros relacionados.
--- Sei utilizar COMMIT e ROLLBACK como apoio às operações.

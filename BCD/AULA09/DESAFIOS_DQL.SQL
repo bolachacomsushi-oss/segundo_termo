@@ -1,7 +1,7 @@
 -- Active: 1788351689620@@127.0.0.1@3306@smartcoffee_dml_beatriz
 -- ============================================================
 -- AULA 09 - ATIVIDADE PRÁTICA DE DQL
--- Nome: Beatriz Barroa de Sousa
+-- Nome: Beatriz Barros de Sousa
 -- Turma: 2-Devie Data: 07/10/2026(meu birthday!)
 -- Base: smartcoffee_dml_beatriz
 -- ============================================================
