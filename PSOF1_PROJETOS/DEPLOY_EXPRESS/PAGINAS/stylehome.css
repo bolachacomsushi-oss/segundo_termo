@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    color: #222;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 2px solid #777;
+}
+
+.logo {
+    border: 1px solid #777;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+header input {
+    width: 35%;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+}
+
+/* Banner principal */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    border-bottom: 2px solid #777;
+}
+
+.banner button {
+    border-radius: 50%;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+
+.imagem-grande {
+    width: 60%;
+    height: 150px;
+    border: 1px solid #555;
+    background: linear-gradient(
+        25deg,
+        transparent 49.7%,
+        #555 50%,
+        transparent 50.3%
+    ),
+    linear-gradient(
+        155deg,
+        transparent 49.7%,
+        #555 50%,
+        transparent 50.3%
+    );
+}
+
+/* Cards de comidas */
+.comidas {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 25px 15px;
+    border-bottom: 2px solid #777;
+}
+
+.card {
+    width: 30%;
+    border: 1px solid #888;
+    padding: 5px;
+    text-align: center;
+}
+
+.imagem {
+    height: 70px;
+    border: 1px solid #555;
+    background: linear-gradient(
+        20deg,
+        transparent 49.5%,
+        #555 50%,
+        transparent 50.5%
+    ),
+    linear-gradient(
+        160deg,
+        transparent 49.5%,
+        #555 50%,
+        transparent 50.5%
+    );
+}
+
+.card p {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.card button {
+    width: 90%;
+    cursor: pointer;
+}
+
+/* Promoções */
+.promocoes {
+    padding: 10px;
+    border-bottom: 2px solid #777;
+}
+
+.promocoes h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.lista-promocoes {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.produto {
+    width: 30%;
+}
+
+.foto {
+    height: 100px;
+    border: 1px solid #555;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 5px;
+    font-size: 20px;
+    background: linear-gradient(
+        45deg,
+        transparent 49.5%,
+        #555 50%,
+        transparent 50.5%
+    ),
+    linear-gradient(
+        135deg,
+        transparent 49.5%,
+        #555 50%,
+        transparent 50.5%
+    );
+}
+
+.produto p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Rodapé */
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 10px 30px;
+    font-size: 12px;
+}
+
+.frase {
+    width: 25%;
+}
+
+.frase p {
+    margin-top: 10px;
+}
+
+.atendimento {
+    width: 45%;
+    text-align: center;
+}
+
+.contato {
+    width: 25%;
+    text-align: center;
+}
+
+.imagem-rodape {
+    height: 55px;
+    margin-top: 15px;
+    border: 1px solid #555;
+    background: linear-gradient(
+        15deg,
+        transparent 49.5%,
+        #555 50%,
+        transparent 50.5%
+    ),
+    linear-gradient(
+        165deg,
+        transparent 49.5%,
+        #555 50%,
+        transparent 50.5%
+    );
+}
+
+.selos {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 55px;
+}
+
+.selos span {
+    border: 1px solid #888;
+    padding: 5px 12px;
+}
+
+
+.foto-hamburguer::before,
+.foto-hamburguer::after {
+    display: none;
+}
+
+.foto-hamburguer img {
+    width: 1000%;
+    height: 1000%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Carrossel de imagens */
+
+.banner {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.banner-imagem {
+    width: 80%;
+    max-width: 1000px;
+    height: 260px;
+    overflow: hidden;
+}
+
+.banner-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
