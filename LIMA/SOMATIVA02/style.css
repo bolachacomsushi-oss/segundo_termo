@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(252, 249, 249);
+}
+
+.cabecalho {
+    display: flex;
+    gap: 23px;
+    list-style: circle;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
