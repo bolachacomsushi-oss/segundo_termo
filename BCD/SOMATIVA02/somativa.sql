@@ -6,6 +6,7 @@ DROP DATABASE BIBLIOTECA_BEATRIZ_SOM2;
 CREATE DATABASE BIBLIOTECA_BEATRIZ_SOM2;
 USE BIBLIOTECA_BEATRIZ_SOM2;
 
+-------------------------------------------------------------------------------------------
 CREATE TABLE USUARIO (
     ID_USUARIO INT PRIMARY KEY AUTO_INCREMENT,
     NOME VARCHAR(100) NOT NULL,
@@ -13,7 +14,9 @@ CREATE TABLE USUARIO (
     TELEFONE VARCHAR(20),
     ATIVO BOOLEAN NOT NULL DEFAULT TRUE
 )
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVRO (
     ID_LIVRO INT PRIMARY KEY AUTO_INCREMENT,
     TITULO VARCHAR(150) NOT NULL,
@@ -23,7 +26,9 @@ CREATE TABLE IF NOT EXISTS LIVRO (
     QUANTIDADE_DISPONIVEL INT DEFAULT "0",
     CHECK (QUANTIDADE_DISPONIVEL >= 0)
 )
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 CREATE TABLE EMPRESTIMO (
     ID_EMPRESTIMO INT PRIMARY KEY AUTO_INCREMENT,
     ID_USUARIO INT NOT NULL,
@@ -35,18 +40,23 @@ CREATE TABLE EMPRESTIMO (
     CONSTRAINT FK_EMPRESTIMO_USUARIO FOREIGN KEY (ID_USUARIO) REFERENCES USUARIO(ID_USUARIO),
     CONSTRAINT FK_EMPRESTIMO_LIVRO FOREIGN KEY (ID_LIVRO) REFERENCES LIVRO(ID_LIVRO)
 )
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 ALTER TABLE LIVRO ADD EDITORA VARCHAR(100);
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 INSERT INTO usuario (NOME, EMAIL, TELEFONE, ATIVO) VALUES
 ('Evan Lee', 'heeseung@email.com', '19 99652-1009', TRUE),
 ('Jay Park', 'jayP@email.com', '19 99652-0702', TRUE),
 ('Jake Shim', 'jaeyun@email.com', '19 99652-0703', TRUE),
 ('Park Sunghoon', 'sunghoong@email.com', NULL, TRUE);
-
+-------------------------------------------------------------------------------------------
 
 
 -- FASE 02 -- DML: DATA MANIPULATION LANGUAGE
+-------------------------------------------------------------------------------------------
 INSERT INTO LIVRO (TITULO, AUTOR, ISBN, ANO_PUBLICACAO, QUANTIDADE_DISPONIVEL) VALUES
 ('A Coragem de Não Agradar', 'Ichiro Kishimi e Fumitake Koga', '9788543105697' , '2018', 26),
 ('A Negação da Morte', 'Ernest Becker', '9788501034175' , '1976', 8),
@@ -54,54 +64,82 @@ INSERT INTO LIVRO (TITULO, AUTOR, ISBN, ANO_PUBLICACAO, QUANTIDADE_DISPONIVEL) V
 ('O Erro do Descartes', 'António Damásio', '9788535922004' , '1996', 17),
 ('A Formação Social da Mente', 'Lev Vygotski', '9788533622647' , '1984', 12),
 ('Jantar Secreto', 'Raphael Montes', '9788535928358' , '2016', 31);
+-------------------------------------------------------------------------------------------
 
-
+-------------------------------------------------------------------------------------------
 INSERT INTO EMPRESTIMO (DATA_EMPRESTIMO, DATA_PREVISTA, STATUS_EMPRESTIMO, ID_USUARIO, ID_LIVRO) VALUES
 ('2025-07-12 09:15:35', '2025-07-26', 'ABERTO', 1, 1),
 ('2025-08-17 10:27:55', '2025-08-31', 'ABERTO', 4, 6),
 ('2025-09-01 11:45:13', '2025-09-14', 'ABERTO', 2, 3);
+-------------------------------------------------------------------------------------------
 
-
+-------------------------------------------------------------------------------------------
 SELECT*FROM USUARIO
 WHERE ID_USUARIO = 3
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 UPDATE usuario
 SET TELEFONE = '19 99857-0773'
 WHERE ID_USUARIO = 3
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 INSERT INTO LIVRO (TITULO, AUTOR, ISBN, ANO_PUBLICACAO, QUANTIDADE_DISPONIVEL) VALUES
 ('Verity', 'Colleen Hoover', '9788501117847' , '2020', 33),
 ('O Vilarejo', 'Raphael Montes', '9788581053042' , '2015', 24);
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 UPDATE livro
 SET QUANTIDADE_DISPONIVEL = (QUANTIDADE_DISPONIVEL) + 2
 WHERE ANO_PUBLICACAO > 2000
 -- (OBS: coloquei pra ser depois/maior de 2000 porque não tinha colocado livros depois de 2020)
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 INSERT INTO usuario (NOME, EMAIL, TELEFONE, ATIVO) VALUES
 ('Manon Bannerman', 'manon@email.com', '19 99872-0567', TRUE);
 DELETE FROM usuario
 WHERE ID_USUARIO = 5
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 DELETE FROM usuario
 WHERE ID_USUARIO = 1
 -- (RESULTADO OBSERVADO: não foi possível deletar um usuario que fez um emprestimo pois o programa não permite)
-
+-------------------------------------------------------------------------------------------
 
 
 -- FASE 3 -- DQL: CONSULTAS E ANÁLISE
+-------------------------------------------------------------------------------------------
 SELECT TITULO, AUTOR, QUANTIDADE_DISPONIVEL FROM livro
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 SELECT QUANTIDADE_DISPONIVEL
 FROM livro
 WHERE QUANTIDADE_DISPONIVEL > 2
 ORDER BY QUANTIDADE_DISPONIVEL ASC
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 SELECT TITULO
 FROM livro
 WHERE TITULO LIKE '%CORAGEM%'
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
 SELECT ANO_PUBLICACAO
 FROM livro
 WHERE ANO_PUBLICACAO BETWEEN 2015 AND 2025
+-------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
+SELECT COUNT(*) AS QUANTIDADE_DISPONIVEL
+FROM LIVRO;
+SELECT MIN(QUANTIDADE_DISPONIVEL) AS ESTOQUE_BAIXO, MAX(QUANTIDADE_DISPONIVEL) AS QUANTIDADE_ESTAVEL, AVG(QUANTIDADE_DISPONIVEL) MEDIA_ESTOQUE
+FROM LIVRO;
+SELECT SUM(QUANTIDADE_DISPONIVEL) AS TOTAL_LIVROS
+FROM LIVRO
+--------------------------------------------------------------------------------------------
