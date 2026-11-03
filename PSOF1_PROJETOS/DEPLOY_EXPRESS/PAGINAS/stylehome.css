@@ -1,265 +1,455 @@
+/* CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f3ef;
     color: #222;
 }
 
-/* Cabeçalho */
+.site {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* CABEÇALHO */
 header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 10px;
-    padding: 15px;
-    border-bottom: 2px solid #777;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 20px 5%;
+    background-color: #171717;
+    color: #852467;
 }
 
 .logo {
-    border: 1px solid #777;
-    padding: 5px 20px;
-    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #f04438;
+    text-transform: uppercase;
 }
 
 header input {
-    width: 35%;
-    padding: 5px;
+    width: 28%;
+    padding: 12px 16px;
+    border: 1px solid #555;
+    border-radius: 25px;
+    outline: none;
+    background-color: #292929;
+    color: white;
+}
+
+header input::placeholder {
+    color: #ccc;
+}
+
+header input:focus {
+    border-color: #f04438;
 }
 
 nav {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 22px;
 }
 
 nav a {
+    color: white;
     text-decoration: none;
-    color: #222;
     font-size: 14px;
+    transition: color 0.3s;
 }
 
-/* Banner principal */
+nav a:hover {
+    color: #f04438;
+}
+
+/* BANNER PRINCIPAL */
 .banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px;
-    border-bottom: 2px solid #777;
-}
-
-.banner button {
-    border-radius: 50%;
-    padding: 7px 12px;
-    cursor: pointer;
-}
-
-.imagem-grande {
-    width: 60%;
-    height: 150px;
-    border: 1px solid #555;
-    background: linear-gradient(
-        25deg,
-        transparent 49.7%,
-        #555 50%,
-        transparent 50.3%
-    ),
-    linear-gradient(
-        155deg,
-        transparent 49.7%,
-        #555 50%,
-        transparent 50.3%
-    );
-}
-
-/* Cards de comidas */
-.comidas {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 25px 15px;
-    border-bottom: 2px solid #777;
-}
-
-.card {
-    width: 30%;
-    border: 1px solid #888;
-    padding: 5px;
-    text-align: center;
-}
-
-.imagem {
-    height: 70px;
-    border: 1px solid #555;
-    background: linear-gradient(
-        20deg,
-        transparent 49.5%,
-        #555 50%,
-        transparent 50.5%
-    ),
-    linear-gradient(
-        160deg,
-        transparent 49.5%,
-        #555 50%,
-        transparent 50.5%
-    );
-}
-
-.card p {
-    font-size: 12px;
-    margin: 5px 0;
-}
-
-.card button {
-    width: 90%;
-    cursor: pointer;
-}
-
-/* Promoções */
-.promocoes {
-    padding: 10px;
-    border-bottom: 2px solid #777;
-}
-
-.promocoes h2 {
-    text-align: center;
-    font-size: 22px;
-    font-weight: normal;
-    margin-bottom: 10px;
-}
-
-.lista-promocoes {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.produto {
-    width: 30%;
-}
-
-.foto {
-    height: 100px;
-    border: 1px solid #555;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: 5px;
-    font-size: 20px;
-    background: linear-gradient(
-        45deg,
-        transparent 49.5%,
-        #555 50%,
-        transparent 50.5%
-    ),
-    linear-gradient(
-        135deg,
-        transparent 49.5%,
-        #555 50%,
-        transparent 50.5%
-    );
-}
-
-.produto p {
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-/* Rodapé */
-footer {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    padding: 15px 10px 30px;
-    font-size: 12px;
-}
-
-.frase {
-    width: 25%;
-}
-
-.frase p {
-    margin-top: 10px;
-}
-
-.atendimento {
-    width: 45%;
-    text-align: center;
-}
-
-.contato {
-    width: 25%;
-    text-align: center;
-}
-
-.imagem-rodape {
-    height: 55px;
-    margin-top: 15px;
-    border: 1px solid #555;
-    background: linear-gradient(
-        15deg,
-        transparent 49.5%,
-        #555 50%,
-        transparent 50.5%
-    ),
-    linear-gradient(
-        165deg,
-        transparent 49.5%,
-        #555 50%,
-        transparent 50.5%
-    );
-}
-
-.selos {
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    margin-top: 55px;
-}
-
-.selos span {
-    border: 1px solid #888;
-    padding: 5px 12px;
-}
-
-
-.foto-hamburguer::before,
-.foto-hamburguer::after {
-    display: none;
-}
-
-.foto-hamburguer img {
-    width: 1000%;
-    height: 1000%;
-    object-fit: contain;
-    display: block;
-}
-
-/* Carrossel de imagens */
-
-.banner {
-    width: 100%;
-    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    padding: 35px 5%;
+    background-color: #e8e3db;
 }
 
-.banner-imagem {
-    width: 80%;
-    max-width: 1000px;
-    height: 260px;
+.imagem-banner {
+    width: 100%;
+    height: 390px;
     overflow: hidden;
+    border-radius: 18px;
+    background-color: #ddd;
 }
 
-.banner-imagem img {
+.imagem-banner img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.seta {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f04438;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.seta:hover {
+    background-color: #c92d24;
+}
+
+/* CARDÁPIO */
+.cardapio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    padding: 55px 7%;
+    background-color: #fff;
+}
+
+.produto {
+    overflow: hidden;
+    padding-bottom: 22px;
+    border-radius: 16px;
+    background-color: #f7f5f2;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.13);
+}
+
+.produto img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.produto p {
+    margin: 20px 12px;
+    font-size: 16px;
+    color: #444;
+}
+
+.produto button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #f04438;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.produto button:hover {
+    background-color: #c92d24;
+}
+
+/* PROMOÇÕES */
+.promocoes {
+    padding: 55px 7%;
+    background-color: #f5f3ef;
+}
+
+.promocoes h2 {
+    margin-bottom: 35px;
+    color: #222;
+    font-size: 30px;
+    text-align: center;
+}
+
+.lista-promocoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.promocao {
+    padding: 15px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    text-align: center;
+}
+
+.imagem-promocao {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #eee;
+}
+
+.imagem-promocao img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.imagem-promocao button {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f04438;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.imagem-promocao button:hover {
+    background-color: #c92d24;
+}
+
+.promocao p {
+    margin-top: 15px;
+    color: #333;
+    font-size: 15px;
+}
+
+.promocao p:last-child {
+    color: #f04438;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* RODAPÉ */
+footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 45px;
+    padding: 45px 7%;
+    background-color: #171717;
+    color: white;
+}
+
+.frase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border-right: 1px solid #444;
+}
+
+.frase p {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.frase span {
+    display: block;
+    width: 5px;
+    height: 100px;
+    margin-right: 18px;
+    border-radius: 5px;
+    background-color: #f04438;
+}
+
+.atendimento {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    align-items: center;
+    gap: 20px;
+}
+
+.titulo-atendimento p {
+    margin-bottom: 12px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.titulo-atendimento a {
+    color: #f04438;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.titulo-atendimento a:hover {
+    text-decoration: underline;
+}
+
+.imagem-atendimento {
+    width: 150px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.imagem-atendimento img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
+.selos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    grid-column: 1 / -1;
+}
+
+.selos span {
+    padding: 9px 15px;
+    border: 1px solid #555;
+    border-radius: 20px;
+    color: #ddd;
+    font-size: 12px;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header input {
+        width: 45%;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .imagem-banner {
+        height: 300px;
+    }
+
+    .cardapio,
+    .lista-promocoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    .frase {
+        min-height: 130px;
+        border-right: none;
+        border-bottom: 1px solid #444;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    header {
+        gap: 18px;
+        padding: 22px 5%;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    header input {
+        width: 100%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .banner {
+        gap: 8px;
+        padding: 22px 3%;
+    }
+
+    .imagem-banner {
+        height: 220px;
+        border-radius: 12px;
+    }
+
+    .seta {
+        width: 32px;
+        height: 32px;
+        font-size: 19px;
+    }
+
+    .cardapio,
+    .lista-promocoes {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 30px 6%;
+    }
+
+    .produto img {
+        height: 240px;
+    }
+
+    .promocoes {
+        padding: 35px 6%;
+    }
+
+    .promocoes h2 {
+        font-size: 25px;
+    }
+
+    .imagem-promocao {
+        height: 220px;
+    }
+
+    footer {
+        gap: 30px;
+        padding: 35px 7%;
+    }
+
+    .frase p {
+        font-size: 25px;
+    }
+
+    .atendimento {
+        grid-template-columns: 1fr 110px;
+        gap: 12px;
+    }
+
+    .titulo-atendimento p {
+        font-size: 18px;
+    }
+
+    .imagem-atendimento {
+        width: 110px;
+        height: 100px;
+    }
+}

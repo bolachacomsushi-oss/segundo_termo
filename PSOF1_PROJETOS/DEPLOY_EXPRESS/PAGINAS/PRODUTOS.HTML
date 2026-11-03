@@ -3,106 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleprodutos.css">
-    <title>Detalhes do produto</title>
+    <title>Vintage Patty</title>
+    <link rel="stylesheet" href="../styleprodutos.css">
 </head>
 <body>
- 
-<!-- CABEÇALHO: colar aqui o cabeçalho feito pela equipe -->
-<!-- Se o cabeçalho da sua amiga estiver pronto, apague esta linha e cole o <header> dela aqui -->
- 
-<main>
-  <section class="palco" aria-labelledby="nome-produto">
-    <div class="produto">
-      <div class="foto" role="img" aria-label="Foto do Jukebo">🍔</div>
- 
-      <form id="pedido">
-        <h1 id="nome-produto">Jukebox</h1>
-        <p class="descricao">Hambúrguer grelhado, queijo derretido e o molho secreto da casa, no pão com gergelim.</p>
- 
-        <h2>Ingredientes</h2>
-        <ul class="ingredientes">
-          <li>Pão com gergelim</li>
-          <li>Hambúrguer bovino</li>
-          <li>Queijo cheddar</li>
-          <li>Picles</li>
-          <li>Alface</li>
-          <li>Cebola</li>
-          <li>Molho Turbo</li>
-        </ul>
-        <p class="dica">Contém glúten, leite, gergelim e ovo.</p>
- 
-        <!-- TAMANHO: data-preco é o valor base de cada tamanho -->
-        <fieldset>
-          <legend>Tamanho</legend>
-          <div class="tamanhos">
-            <label><input type="radio" name="tamanho" value="Simples" data-preco="24.90" checked>
-              <span>Simples<small>R$ 24,90</small></span></label>
-            <label><input type="radio" name="tamanho" value="Duplo" data-preco="29.90">
-              <span>Duplo<small>R$ 29,90</small></span></label>
-            <label><input type="radio" name="tamanho" value="Triplo" data-preco="36.90">
-              <span>Triplo<small>R$ 36,90</small></span></label>
-          </div>
-        </fieldset>
- 
-        <!-- OPÇÕES: adicionais pagos (data-preco) e retiradas grátis -->
-        <fieldset>
-          <legend>Adicionais</legend>
-          <label class="opcao"><input type="checkbox" name="extra" value="Bacon" data-preco="4.50">
-            <span class="nome">Bacon crocante</span><span class="valor">+ R$ 4,50</span></label>
-          <label class="opcao"><input type="checkbox" name="extra" value="Queijo extra" data-preco="3.00">
-            <span class="nome">Queijo extra</span><span class="valor">+ R$ 3,00</span></label>
-          <label class="opcao"><input type="checkbox" name="extra" value="Ovo" data-preco="2.50">
-            <span class="nome">Ovo</span><span class="valor">+ R$ 2,50</span></label>
-          <label class="opcao"><input type="checkbox" name="extra" value="Combo (batata e refri)" data-preco="14.00">
-            <span class="nome">Virar combo (batata e refrigerante)</span><span class="valor">+ R$ 14,00</span></label>
-        </fieldset>
- 
-        <fieldset>
-          <legend>Retirar</legend>
-          <label class="opcao"><input type="checkbox" name="retirar" value="Sem picles">
-            <span class="nome">Sem picles</span><span class="valor">grátis</span></label>
-          <label class="opcao"><input type="checkbox" name="retirar" value="Sem cebola">
-            <span class="nome">Sem cebola</span><span class="valor">grátis</span></label>
-          <label class="opcao"><input type="checkbox" name="retirar" value="Sem molho">
-            <span class="nome">Sem molho</span><span class="valor">grátis</span></label>
-        </fieldset>
- 
-        <div class="compra">
-          <div class="preco" aria-live="polite"><small>Total</small><span id="total">R$ 24,90</span></div>
-          <button class="botao" type="submit">Adicionar ao pedido</button>
+
+    <header class="cabecalho">
+        <p class="subtitulo">DELIVERY</p>
+        <h1>RETRO BURGER</h1>
+        <p>Uma viagem no tempo a cada mordida!</p>
+    </header>
+
+    <main class="conteudo">
+
+        <div class="produto">
+            <div class="visual-produto">
+                <span class="selo">SUCESSO DOS ANOS 80</span>
+
+                <div class="hamburguer">
+                    <span role="img" aria-label="Hambúrguer">🍔</span>
+                </div>
+
+                <p class="destaque">SABOR EM ALTA FREQUÊNCIA</p>
+            </div>
+
+            <div class="informacoes">
+                <p class="categoria">★ O FAVORITO DA GALERA ★</p>
+                <h2>Disco Burger</h2>
+
+                <p class="descricao">
+                    Hambúrguer artesanal com bacon crocante,
+                    cheddar derretido e o molho especial da casa.
+                    Um clássico que nunca sai de moda!
+                </p>
+
+                <h3>O que vem nessa mistura?</h3>
+
+                <ul class="ingredientes">
+                    <li>Pão de brioche</li>
+                    <li>Hambúrguer bovino de 150 g</li>
+                    <li>Queijo cheddar</li>
+                    <li>Bacon crocante</li>
+                    <li>Alface e tomate</li>
+                    <li>Molho especial da casa</li>
+                </ul>
+
+                <p class="alergicos">
+                    Contém glúten, leite e ovos.
+                </p>
+
+                <div class="compra">
+                    <div class="valor">
+                        <p>Apenas</p>
+                        <p class="preco">R$ 28,90</p>
+                    </div>
+
+                    
+                    <a
+                        class="botao"
+                        href="https://wa.me/5511999999999?text=Olá!%20Quero%20pedir%20um%20Disco%20Burger."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        PEDIR AGORA ↗
+                    </a>
+                </div>
+            </div>
         </div>
-        <p class="aviso" id="aviso" role="status"></p>
-      </form>
-    </div>
-    <div class="chao" aria-hidden="true"></div>
-  </section>
-</main>
- 
-<!-- RODAPÉ: colar aqui o rodapé feito pela equipe -->
- 
-<script>
-  const form = document.getElementById('pedido');
-  const total = document.getElementById('total');
-  const aviso = document.getElementById('aviso');
-  const moeda = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
- 
-  function calcular() {
-    let soma = 0;
-    form.querySelectorAll('input[data-preco]:checked').forEach(i => soma += parseFloat(i.dataset.preco));
-    total.textContent = moeda(soma);
-    aviso.textContent = '';
-    return soma;
-  }
- 
-  form.addEventListener('change', calcular);
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const escolhas = [...form.querySelectorAll('input:checked')].map(i => i.value);
-    aviso.textContent = 'Adicionado: ' + escolhas.join(', ') + ' (' + moeda(calcular()) + ')';
-    // Aqui a equipe pode ligar o pedido ao carrinho do site.
-  });
-  calcular();
-</script>
+
+        <div class="entrega">
+            <h2>DO NOSSO GRILL PARA SUA CASA</h2>
+
+            <div class="dados-entrega">
+                <div class="item-entrega">
+                    <h3>Tempo de entrega</h3>
+                    <p>30 a 50 minutos</p>
+                </div>
+
+                <div class="item-entrega">
+                    <h3>Taxa de entrega</h3>
+                    <p>Consulte pelo seu endereço</p>
+                </div>
+
+                <div class="item-entrega">
+                    <h3>Funcionamento</h3>
+                    <p>Terça a domingo • 18h às 23h</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+        <p>RETRO BURGER © 2026</p>
+        <p>O sabor é de hoje. A vibe é dos anos 80.</p>
+    </footer>
+
 </body>
 </html>
