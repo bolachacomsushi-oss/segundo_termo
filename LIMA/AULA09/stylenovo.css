@@ -1,0 +1,136 @@
+:root {
+
+    --rosinha: #E27396;
+    --cafe: #5A321B;
+    --creme: #F3E6D7;
+    --marfim: #FFFCF5;
+    --amarelinho: #F4E2B2;
+    --taupe: #2B170D;
+    --texto: #1e140f;
+    --branco: #FFFFFF;
+
+    --fonte-principal: Arial, sans-serif;
+    --fonte-secundaria: "poppins", Helvetica;
+
+    --espaco-xs: 4px;
+    --espaco-sm: 8px;
+    --espaco-md: 16px;
+    --espaco-lg: 24px;
+    --espaco-xl: 48px;
+    --espaco-xxl: 80px;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--caramelo);
+    font-family: var(--fonte-principal);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: var(--cafe);
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25;
+}
+
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--cafe);
+}
+
+.visual {
+    color: var(--branco);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: var(--amarelinho);
+}
+
+.menu a:focus-visible {
+    outline: 3px solid var(--amarelinho);
+    outline-offset: 4px;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 80px 8%;
+    background-color: var(--rosinha);
+}
+
+.banner-imagem {
+    flex: 1;
+    margin: 0;
+}
+
+.banner-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+.cafe-move {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: var(--amarelinho);
+    color: var(--taupe);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.cafe-move:hover{
+    background-color: var(--cafe);
+    transition: background-color 0.5s ease; 
+}
