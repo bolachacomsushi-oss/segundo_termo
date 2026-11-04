@@ -34,28 +34,12 @@ header {
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: bold;
     color: #f04438;
+    align-items: flex-start;
     text-transform: uppercase;
-}
-
-header input {
-    width: 28%;
-    padding: 12px 16px;
-    border: 1px solid #555;
-    border-radius: 25px;
-    outline: none;
-    background-color: #292929;
-    color: white;
-}
-
-header input::placeholder {
-    color: #ccc;
-}
-
-header input:focus {
-    border-color: #f04438;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 nav {

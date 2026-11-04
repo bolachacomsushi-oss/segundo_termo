@@ -19,6 +19,15 @@ body {
     color: #fff0ce;
 }
 
+.logo-cardapio {
+    color: #f04438;
+    align-items: flex-start;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
 /* Navegação */
 .navegacao {
     background-color: #292323;
