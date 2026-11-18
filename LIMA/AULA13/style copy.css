@@ -1,0 +1,124 @@
+.inicio {
+    /* background-color: cadetblue; */
+    background-image: linear-gradient(-135deg, #e2026b, #f8ef73);
+    display: flex;
+    border-radius: 10px; 
+    /* border radius deixa borda arredondada */
+    border: 2px solid #97023b;
+    height: 80 px;
+    align-items: center;
+    justify-content: flex-end;
+
+
+}
+
+body {
+    box-sizing: border-box;
+    /* background-image: linear-gradient(30deg, #4F46E5, #a23de6); */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.inicio span {
+    color: rgb(255, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    /* font weight muda expessura da letra. max:800 */
+
+}
+
+.inicio a {
+    text-decoration: none;
+    list-style: none;
+    color: #f7de6e;
+}
+
+.navegacao {
+     display: flex;
+     /* flex-direction: row;  deixa em linhas */
+    /* flex-wrap: wrap; quebra linhas */
+    text-decoration: none;
+    list-style: none;
+    gap: 48px;
+    margin: 0;
+    padding: 30px;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-content: flex-start;
+   
+}
+
+.conteudo-inicial {
+    background-color: rgb(241, 119, 166);
+    display: flex;
+}
+
+.conteudo-art {
+    font-size: 16px;
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.cartao-img:hover {
+    box-shadow: 0 10px 24px -8px rgb(255, 235, 121);
+    background-color: rgb(255, 248, 145);
+    filter: contrast()(2px);
+    /* transform: translateX(120px) rotate(-10deg); */
+}
+
+.galeria-conteudo {
+    background-color: lightpink;
+    padding: 0;
+    margin: 0;
+}
+
+.galeria-img {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    grid-column: auto;
+}
+
+.galeria-img img {
+    display: block;
+    max-width: 100%;
+    height: 50%;
+}
+
+.galeria-img , ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+.gal-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    /* width: 100%; */
+}
+
+.gal-img figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px;
+    color: pink;
+    background-color: #f8ef73;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+
+}
+
+.gal-img:hover figcaption {
+    transform: translateY(0);
+}
